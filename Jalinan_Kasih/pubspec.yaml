@@ -36,6 +36,13 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_fonts: ^2.0.0
   font_awesome_flutter: ^9.0.0
+  firebase_auth: ^3.3.11
+  firebase_core: ^1.13.1
+  flutter_chat_ui: ^1.5.5
+  flutter_firebase_chat_core: ^1.5.2
+  http: ^0.13.4
+  firebase_storage: ^10.2.9
+  path_provider: ^2.0.9
 
 dev_dependencies:
   flutter_test:
