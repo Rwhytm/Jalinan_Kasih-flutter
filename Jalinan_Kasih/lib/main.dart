@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jalinan_kasih/common/constant.dart';
 import 'package:jalinan_kasih/pages/pages.dart';
 
 void main() {
@@ -10,9 +11,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       home: SplashPage(),
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primaryColor: kPrimaryColor,
+        scaffoldBackgroundColor: Colors.white,
+      ),
     );
   }
 }
