@@ -20,7 +20,7 @@ class _SplashPageState extends State<SplashPage> {
   void onDone() {
     Navigator.of(context).pushReplacement(
       MaterialPageRoute(
-        builder: (context) => Welcome(),
+        builder: (context) => LoginPage(),
       ),
     );
   }
@@ -28,7 +28,7 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: primaryColor,
+      backgroundColor: kPrimaryColor,
       body: Center(
         child: Container(
             child: Column(

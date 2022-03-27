@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:jalinan_kasih/common/common.dart';
+import 'package:jalinan_kasih/common/constant.dart';
 import 'package:jalinan_kasih/pages/login.dart';
 import 'package:jalinan_kasih/pages/menu1/menu1.dart';
 import 'package:jalinan_kasih/pages/menu2/menu2.dart';

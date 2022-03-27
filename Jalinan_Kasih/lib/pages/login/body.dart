@@ -18,7 +18,7 @@ class Body extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              "LOGIN",
+              "LOGIN ADMIN",
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             SizedBox(height: size.height * 0.03),
@@ -38,10 +38,7 @@ class Body extends StatelessWidget {
               text: "LOGIN",
               press: () {},
             ),
-            TextButton(
-              onPressed: () {},
-              child: Text("Don’t have an Account ? "),
-            ),
+            //
             SizedBox(height: size.height * 0.03),
             // AlreadyHaveAnAccountCheck(
             //   press: () {
