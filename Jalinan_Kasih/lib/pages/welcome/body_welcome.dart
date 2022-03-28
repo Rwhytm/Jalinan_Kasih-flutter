@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jalinan_kasih/common/services.dart';
 import 'package:jalinan_kasih/pages/login.dart';
 import 'package:jalinan_kasih/pages/welcome/background_welcome.dart';
 import 'package:jalinan_kasih/widgets/rounded_button.dart';
@@ -26,44 +27,20 @@ class BodyWelcome extends StatelessWidget {
             RoundedButton(
               text: "ADMIN",
               press: () {
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //     builder: (context) {
-                //       return LoginPage();
-                //     },
-                //   ),
-                // );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) {
+                    return LoginPage();
+                  }),
+                );
               },
             ),
             RoundedButton(
               text: "USER",
               press: () {
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //     builder: (context) {
-                //       return LoginPage();
-                //     },
-                //   ),
-                // );
+                AuthServices.anonymousSign();
               },
             ),
-            // RoundedButton(
-            //   text: "SIGN UP",
-            //   color: kPrimaryLightColor,
-            //   textColor: Colors.black,
-            //   press: () {
-            //     Navigator.push(
-            //       context,
-            //       MaterialPageRoute(
-            //         builder: (context) {
-            //           return SignUpScreen();
-            //         },
-            //       ),
-            //     );
-            //   },
-            // ),
           ],
         ),
       ),

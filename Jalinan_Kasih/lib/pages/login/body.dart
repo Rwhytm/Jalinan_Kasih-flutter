@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jalinan_kasih/pages/login/background.dart';
+import 'package:jalinan_kasih/pages/welcome.dart';
+import 'package:jalinan_kasih/widgets/login_sebagai_user.dart';
 import 'package:jalinan_kasih/widgets/rounded_button.dart';
 import 'package:jalinan_kasih/widgets/rounded_input_field.dart';
 import 'package:jalinan_kasih/widgets/rounded_password_field.dart';
@@ -17,15 +20,16 @@ class Body extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
+            const Text(
               "LOGIN ADMIN",
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             SizedBox(height: size.height * 0.03),
-            // SvgPicture.asset(
-            //   "assets/icons/login.svg",
-            //   height: size.height * 0.35,
-            // ),
+            SvgPicture
+            .asset(
+              "assets/icons/login.svg",
+              height: size.height * 0.35,
+            ),
             SizedBox(height: size.height * 0.03),
             RoundedInputField(
               hintText: "Your Email",
@@ -38,20 +42,7 @@ class Body extends StatelessWidget {
               text: "LOGIN",
               press: () {},
             ),
-            //
-            SizedBox(height: size.height * 0.03),
-            // AlreadyHaveAnAccountCheck(
-            //   press: () {
-            //     Navigator.push(
-            //       context,
-            //       MaterialPageRoute(
-            //         builder: (context) {
-            //           return SignUpScreen();
-            //         },
-            //       ),
-            //     );
-            //   },
-            // ),
+            TextButton(onPressed: () {}, child: Text("Sebagai User"))
           ],
         ),
       ),
