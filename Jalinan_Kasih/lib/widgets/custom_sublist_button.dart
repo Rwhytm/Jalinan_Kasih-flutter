@@ -16,8 +16,8 @@ class CustomSublistButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(
-        horizontal: 20,
-        vertical: 12,
+        horizontal: 5,
+        vertical: 8,
       ),
       child: SizedBox(
         height: 100,

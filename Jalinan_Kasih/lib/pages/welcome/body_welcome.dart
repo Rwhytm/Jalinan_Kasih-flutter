@@ -15,11 +15,11 @@ class BodyWelcome extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              "WELCOME",
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: size.height * 0.05),
+            // Text(
+            //   "WELCOME",
+            //   style: TextStyle(fontWeight: FontWeight.bold),
+            // ),
+            // SizedBox(height: size.height * 0.05),
             SvgPicture.asset(
               "assets/icons/chat.svg",
               height: size.height * 0.45,

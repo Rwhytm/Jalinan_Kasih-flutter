@@ -8,10 +8,36 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  bool _error = false;
+  bool _initialized = false;
+  User? _user;
   @override
+  void initState() {
+    initializeFlutterFire();
+    super.initState();
+  }
+
+  void initializeFlutterFire() async {
+    try {
+      await Firebase.initializeApp();
+      FirebaseAuth.instance.authStateChanges().listen((User? user) {
+        setState(() {
+          _user = user;
+        });
+      });
+      setState(() {
+        _initialized = true;
+      });
+    } catch (e) {
+      setState(() {
+        _error = true;
+      });
+    }
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: primaryColor,
+      backgroundColor: kPrimaryColor,
       body: SafeArea(
         child: Container(
           margin: EdgeInsets.only(
@@ -23,15 +49,26 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
-                  height: 30,
-                ),
-                Text(
-                  'Selamat Datang di\nAplikasi Jalinan Kasih',
-                  style: semiBlackFont.copyWith(
-                    fontSize: 16,
+                IconButton(
+                  onPressed: () {
+                    AuthServices.signOut();
+                  },
+                  icon: const Icon(
+                    Icons.logout_outlined,
+                    size: 25,
+                    color: Colors.white,
                   ),
                 ),
+
+                // SizedBox(
+                //   height: 30,
+                // ),
+                // Text(
+                //   'Selamat Datang di\nAplikasi Jalinan Kasih',
+                //   style: semiBlackFont.copyWith(
+                //     fontSize: 16,
+                //   ),
+                // ),
 
                 SizedBox(
                   height: 200.0,
@@ -94,7 +131,78 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
-
+                CustomSublistButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) {
+                        return const Deskripsi21();
+                      }),
+                    );
+                  },
+                  image: 'assets/images/deskripsi21.png',
+                  title: 'Mengenal Organ Reproduksi\nPerempuan',
+                ),
+                CustomSublistButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) {
+                        return const Deskripsi21();
+                      }),
+                    );
+                  },
+                  image: 'assets/images/deskripsi21.png',
+                  title: 'Mengenal Organ Reproduksi\nPerempuan',
+                ),
+                CustomSublistButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) {
+                        return const Deskripsi21();
+                      }),
+                    );
+                  },
+                  image: 'assets/images/deskripsi21.png',
+                  title: 'Mengenal Organ Reproduksi\nPerempuan',
+                ),
+                CustomSublistButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) {
+                        return const Deskripsi21();
+                      }),
+                    );
+                  },
+                  image: 'assets/images/deskripsi21.png',
+                  title: 'Mengenal Organ Reproduksi\nPerempuan',
+                ),
+                CustomSublistButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) {
+                        return const Deskripsi21();
+                      }),
+                    );
+                  },
+                  image: 'assets/images/deskripsi21.png',
+                  title: 'Mengenal Organ Reproduksi\nPerempuan',
+                ),
+                CustomSublistButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) {
+                        return const Deskripsi21();
+                      }),
+                    );
+                  },
+                  image: 'assets/images/deskripsi21.png',
+                  title: 'Mengenal Organ Reproduksi\nPerempuan',
+                ),
                 // ),
                 // Row(
                 //   children: [
