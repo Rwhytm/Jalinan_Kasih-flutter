@@ -4,6 +4,7 @@ import 'package:jalinan_kasih/common/constant.dart';
 import 'package:jalinan_kasih/common/services.dart';
 import 'package:jalinan_kasih/pages/login.dart';
 import 'package:jalinan_kasih/pages/register/background_register.dart';
+import 'package:jalinan_kasih/pages/wrapper.dart';
 import 'package:jalinan_kasih/widgets/rounded_button.dart';
 import 'package:jalinan_kasih/widgets/rounded_input_field.dart';
 import 'package:jalinan_kasih/widgets/rounded_password_field.dart';
@@ -59,7 +60,7 @@ class BodyRegister extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return LoginPage();
+                    return Wrapper();
                   },
                 ),
               );

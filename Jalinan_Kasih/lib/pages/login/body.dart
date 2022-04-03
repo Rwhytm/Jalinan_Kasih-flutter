@@ -4,9 +4,12 @@ import 'package:jalinan_kasih/common/services.dart';
 import 'package:jalinan_kasih/pages/login/background.dart';
 import 'package:jalinan_kasih/pages/register.dart';
 import 'package:jalinan_kasih/pages/welcome.dart';
+import 'package:jalinan_kasih/pages/wrapper.dart';
 import 'package:jalinan_kasih/widgets/rounded_button.dart';
 import 'package:jalinan_kasih/widgets/rounded_input_field.dart';
 import 'package:jalinan_kasih/widgets/rounded_password_field.dart';
+
+import '../login.dart';
 
 class Body extends StatelessWidget {
   TextEditingController emailController = TextEditingController(text: "");
@@ -47,6 +50,15 @@ class Body extends StatelessWidget {
               press: () async {
                 await AuthServices.signIn(
                     emailController.text, passwordController.text);
+
+                await Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return Wrapper();
+                    },
+                  ),
+                );
               },
             ),
             TextButton(
@@ -55,7 +67,7 @@ class Body extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return Welcome();
+                      return Wrapper();
                     },
                   ),
                 );
