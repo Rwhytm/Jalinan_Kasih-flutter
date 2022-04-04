@@ -1,30 +1,24 @@
-import 'dart:math';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_firebase_chat_core/flutter_firebase_chat_core.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:jalinan_kasih/common/constant.dart';
+import 'package:jalinan_kasih/common/services.dart';
+import 'package:jalinan_kasih/pages/login.dart';
 import 'package:jalinan_kasih/pages/register/background_register.dart';
+import 'package:jalinan_kasih/pages/wrapper.dart';
+import 'package:jalinan_kasih/widgets/rounded_button.dart';
+import 'package:jalinan_kasih/widgets/rounded_input_field.dart';
+import 'package:jalinan_kasih/widgets/rounded_password_field.dart';
+import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
+import 'package:flutter_firebase_chat_core/flutter_firebase_chat_core.dart';
 
-import '../../common/constant.dart';
-import '../../common/services.dart';
-import '../../widgets/rounded_button.dart';
-import '../../widgets/rounded_input_field.dart';
-import '../../widgets/rounded_password_field.dart';
-import '../wrapper.dart';
-
-class BodyRegister extends StatefulWidget {
-  BodyRegister({Key? key}) : super(key: key);
-
-  @override
-  State<BodyRegister> createState() => _BodyRegisterState();
-}
-
-class _BodyRegisterState extends State<BodyRegister> {
-  bool _registering = false;
+class BodyRegister extends StatelessWidget {
   TextEditingController emailController = TextEditingController(text: "");
   TextEditingController passwordController = TextEditingController(text: "");
   TextEditingController usernameController = TextEditingController(text: "");
+  BodyRegister({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -60,38 +54,7 @@ class _BodyRegisterState extends State<BodyRegister> {
               color: kPrimaryColor,
               text: "REGISTER",
               textColor: Colors.white,
-              press: () async {
-                await AuthServices.signUp(
-                  usernameController.text,
-                  emailController.text,
-                  passwordController.text,
-                );
-                await Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return Wrapper();
-                    },
-                  ),
-                );
-                // await showDialog(
-                //   context: context,
-                //   builder: (context) => AlertDialog(
-                //     actions: [
-                //       TextButton(
-                //         onPressed: () {
-                //           Navigator.of(context).pop();
-                //         },
-                //         child: const Text('OK'),
-                //       ),
-                //     ],
-                //     content: Text(
-                //       e.toString(),
-                //     ),
-                //     title: const Text('Error'),
-                //   ),
-                // );
-              },
+              press: () async {},
             ),
             TextButton(
               onPressed: () {

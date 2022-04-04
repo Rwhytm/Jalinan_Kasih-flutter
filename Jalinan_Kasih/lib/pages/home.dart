@@ -49,15 +49,20 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                IconButton(
-                  onPressed: () {
-                    AuthServices.signOut();
-                  },
-                  icon: const Icon(
-                    Icons.logout_outlined,
-                    size: 25,
-                    color: Colors.white,
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    IconButton(
+                      onPressed: () {
+                        AuthServices.signOut();
+                      },
+                      icon: const Icon(
+                        Icons.logout_outlined,
+                        size: 25,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
                 ),
 
                 // SizedBox(

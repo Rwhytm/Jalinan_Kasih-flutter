@@ -37,9 +37,7 @@ class RoundedButton extends StatelessWidget {
       ),
       onPressed: press != null
           ? () {
-              if (press != null) {
-                press();
-              }
+              press();
             }
           : null,
       style: ElevatedButton.styleFrom(

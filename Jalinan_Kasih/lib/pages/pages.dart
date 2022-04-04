@@ -20,5 +20,7 @@ import 'package:jalinan_kasih/pages/welcome.dart';
 import 'package:jalinan_kasih/pages/wrapper.dart';
 import 'package:jalinan_kasih/widgets/widgets.dart';
 
+import '../widgets/register_button.dart';
+
 part 'splash.dart';
 part 'home.dart';

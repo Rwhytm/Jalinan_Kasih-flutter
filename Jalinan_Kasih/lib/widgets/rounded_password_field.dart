@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_chat_ui/flutter_chat_ui.dart';
 import 'package:jalinan_kasih/common/constant.dart';
 import 'package:jalinan_kasih/widgets/text_field_container.dart';
 
@@ -25,9 +26,11 @@ class RoundedPasswordField extends StatelessWidget {
             Icons.lock,
             color: kPrimaryColor,
           ),
-          // suffixIcon: Icon(
-          //   Icons.visibility,
+          // suffixIcon: IconButton(
+          //   focusColor: Colors.white,
+          //   icon: Icon(Icons.visibility),
           //   color: kPrimaryColor,
+          //   onPressed: () {},
           // ),
           border: InputBorder.none,
         ),
