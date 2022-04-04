@@ -17,6 +17,19 @@ class _HomePageState extends State<HomePage> {
     super.initState();
   }
 
+  void _handlePressed(types.User otherUser, BuildContext context) async {
+    final room = await FirebaseChatCore.instance.createRoom(otherUser);
+
+    Navigator.of(context).pop();
+    await Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => ChatPage(
+          room: room,
+        ),
+      ),
+    );
+  }
+
   void initializeFlutterFire() async {
     try {
       await Firebase.initializeApp();
@@ -36,11 +49,12 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget build(BuildContext context) {
+    var currentUser = FirebaseAuth.instance.currentUser;
     return Scaffold(
       backgroundColor: kPrimaryColor,
       body: SafeArea(
         child: Container(
-          margin: EdgeInsets.only(
+          margin: const EdgeInsets.only(
             left: 10,
             top: 10,
             bottom: 40,
@@ -62,6 +76,16 @@ class _HomePageState extends State<HomePage> {
                         color: Colors.white,
                       ),
                     ),
+                    (currentUser!.isAnonymous == false)
+                        ? IconButton(
+                            onPressed: () {},
+                            icon: const Icon(
+                              Icons.app_registration,
+                              size: 25,
+                              color: Colors.white,
+                            ),
+                          )
+                        : const Text(""),
                   ],
                 ),
 
@@ -78,14 +102,14 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(
                   height: 200.0,
                   child: ListView.builder(
-                    physics: ClampingScrollPhysics(),
+                    physics: const ClampingScrollPhysics(),
                     shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
                     itemCount: 1,
                     itemBuilder: (BuildContext context, int index) => Row(
                       children: [
                         Container(
-                          margin: EdgeInsets.all(10),
+                          margin: const EdgeInsets.all(10),
                           child: CustomMenuButton(
                             onPressed: () {
                               Navigator.push(
@@ -317,11 +341,35 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: Container(
         width: 70,
         height: 70,
-        child: FloatingActionButton(
-          onPressed: () {},
-          child: const Icon(Icons.chat),
-          backgroundColor: Colors.green,
-        ),
+        child: (currentUser!.isAnonymous == false)
+            ? FloatingActionButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return UsersPage();
+                      },
+                    ),
+                  );
+                },
+                child: const Icon(Icons.chat),
+                backgroundColor: Colors.green,
+              )
+            : FloatingActionButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return UsersPage();
+                      },
+                    ),
+                  );
+                },
+                child: const Icon(Icons.chat),
+                backgroundColor: Colors.red,
+              ),
       ),
     );
   }
