@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
 import 'package:flutter_firebase_chat_core/flutter_firebase_chat_core.dart';
+import 'package:jalinan_kasih/common/services.dart';
 import 'package:jalinan_kasih/pages/wrapper.dart';
 import '../common/util.dart';
 import 'chat.dart';
@@ -107,8 +108,10 @@ class UsersPage extends StatelessWidget {
                         ],
                       ),
                       IconButton(
-                          onPressed: () {},
-                          icon: Icon(
+                          onPressed: () async {
+                            await AuthServices.deleteMessage(user.id);
+                          },
+                          icon: const Icon(
                             Icons.delete,
                             size: 25,
                             color: Colors.red,

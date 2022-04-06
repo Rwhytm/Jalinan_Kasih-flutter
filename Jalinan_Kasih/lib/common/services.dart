@@ -44,7 +44,24 @@ class AuthServices {
           role: types.Role.user,
         ),
       );
+
       return firebaseUser;
+    } catch (e) {
+      print(
+        e.toString(),
+      );
+
+      return null;
+    }
+  }
+
+//coba membuat delete user dan room\
+  static Future<void> deleteMessage(String id_user) async {
+    try {
+      void hasil =
+          await FirebaseChatCore.instance.deleteUserFromFirestore(id_user);
+
+      return hasil;
     } catch (e) {
       print(
         e.toString(),
