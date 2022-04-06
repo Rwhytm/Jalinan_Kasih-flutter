@@ -1,8 +1,12 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_chat_ui/flutter_chat_ui.dart';
 import 'package:flutter_firebase_chat_core/flutter_firebase_chat_core.dart';
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
+import 'package:jalinan_kasih/pages/user.dart';
+import 'package:jalinan_kasih/pages/user_admin.dart';
+import 'package:jalinan_kasih/pages/wrapper.dart';
 
 class ChatPage extends StatefulWidget {
   const ChatPage({
@@ -70,8 +74,34 @@ class _ChatPageState extends State<ChatPage> {
 
   @override
   Widget build(BuildContext context) {
+    var currentUser = FirebaseAuth.instance.currentUser;
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back,
+            size: 25,
+          ),
+          onPressed: () {
+            (currentUser!.isAnonymous == false)
+                ? Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return UsersPage();
+                      },
+                    ),
+                  )
+                : Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return UsersPageAdmin();
+                      },
+                    ),
+                  );
+          },
+        ),
         systemOverlayStyle: SystemUiOverlayStyle.light,
         title: const Text('Chat'),
       ),
@@ -102,6 +132,5 @@ class _ChatPageState extends State<ChatPage> {
         },
       ),
     );
-    ;
   }
 }

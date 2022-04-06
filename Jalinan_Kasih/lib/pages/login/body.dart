@@ -74,19 +74,19 @@ class Body extends StatelessWidget {
               },
               child: Text("Login sebagai user"),
             ),
-            TextButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return RegisterPage();
-                    },
-                  ),
-                );
-              },
-              child: Text("Register"),
-            ),
+            // TextButton(
+            //   onPressed: () {
+            //     Navigator.push(
+            //       context,
+            //       MaterialPageRoute(
+            //         builder: (context) {
+            //           return RegisterPage();
+            //         },
+            //       ),
+            //     );
+            //   },
+            //   child: Text("Register"),
+            // ),
           ],
         ),
       ),

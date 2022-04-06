@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
@@ -6,8 +7,8 @@ import 'package:jalinan_kasih/pages/wrapper.dart';
 import '../common/util.dart';
 import 'chat.dart';
 
-class UsersPage extends StatelessWidget {
-  const UsersPage({Key? key}) : super(key: key);
+class UsersPageAdmin extends StatelessWidget {
+  const UsersPageAdmin({Key? key}) : super(key: key);
 
   void _handlePressed(types.User otherUser, BuildContext context) async {
     final room = await FirebaseChatCore.instance.createRoom(otherUser);
@@ -47,7 +48,6 @@ class UsersPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Chat'),
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back,
@@ -64,6 +64,8 @@ class UsersPage extends StatelessWidget {
             );
           },
         ),
+        systemOverlayStyle: SystemUiOverlayStyle.light,
+        title: const Text('Admin Support'),
       ),
       body: StreamBuilder<List<types.User>>(
         stream: FirebaseChatCore.instance.users(),
@@ -80,9 +82,10 @@ class UsersPage extends StatelessWidget {
           }
 
           return ListView.builder(
-            itemCount: snapshot.data!.length,
+            itemCount: 1,
             itemBuilder: (context, index) {
-              final user = snapshot.data![index];
+              final jumlah = (snapshot.data!.length) - 1;
+              final user = snapshot.data![jumlah];
 
               return GestureDetector(
                 onTap: () {
@@ -95,25 +98,15 @@ class UsersPage extends StatelessWidget {
                     horizontal: 16,
                     vertical: 8,
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          _buildAvatar(user),
-                          Text(
-                            getUserName(user),
-                          ),
-                        ],
-                      ),
-                      IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.delete,
-                            size: 25,
-                            color: Colors.red,
-                          ))
-                    ],
+                  child: SizedBox(
+                    child: Row(
+                      children: [
+                        _buildAvatar(user),
+                        Text(
+                          getUserName(user),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               );

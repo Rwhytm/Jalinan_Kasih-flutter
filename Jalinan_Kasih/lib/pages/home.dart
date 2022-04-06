@@ -78,7 +78,16 @@ class _HomePageState extends State<HomePage> {
                     ),
                     (currentUser!.isAnonymous == false)
                         ? IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return RegisterPage();
+                                  },
+                                ),
+                              );
+                            },
                             icon: const Icon(
                               Icons.app_registration,
                               size: 25,
@@ -341,7 +350,7 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: Container(
         width: 70,
         height: 70,
-        child: (currentUser!.isAnonymous == false)
+        child: (currentUser.isAnonymous == false)
             ? FloatingActionButton(
                 onPressed: () {
                   Navigator.push(
@@ -362,10 +371,11 @@ class _HomePageState extends State<HomePage> {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return UsersPage();
+                        return UsersPageAdmin();
                       },
                     ),
                   );
+                  // _handlePressed(, context);
                 },
                 child: const Icon(Icons.chat),
                 backgroundColor: Colors.red,

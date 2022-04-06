@@ -22,6 +22,7 @@ import 'package:jalinan_kasih/pages/register.dart';
 import 'package:jalinan_kasih/pages/rooms.dart';
 import 'package:jalinan_kasih/pages/tim peneliti/menu0_2.dart';
 import 'package:jalinan_kasih/pages/user.dart';
+import 'package:jalinan_kasih/pages/user_admin.dart';
 import 'package:jalinan_kasih/pages/welcome.dart';
 import 'package:jalinan_kasih/pages/wrapper.dart';
 import 'package:jalinan_kasih/widgets/widgets.dart';
