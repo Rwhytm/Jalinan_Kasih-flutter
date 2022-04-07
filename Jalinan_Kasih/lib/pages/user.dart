@@ -11,9 +11,8 @@ class UsersPage extends StatelessWidget {
   const UsersPage({Key? key}) : super(key: key);
 
   void _handlePressed(types.User otherUser, BuildContext context) async {
-    final room = await FirebaseChatCore.instance.createRoom(otherUser);
+    var room = await FirebaseChatCore.instance.createRoom(otherUser);
 
-    Navigator.of(context).pop();
     await Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) => ChatPage(
@@ -108,14 +107,15 @@ class UsersPage extends StatelessWidget {
                         ],
                       ),
                       IconButton(
-                          onPressed: () async {
-                            await AuthServices.deleteMessage(user.id);
-                          },
-                          icon: const Icon(
-                            Icons.delete,
-                            size: 25,
-                            color: Colors.red,
-                          ))
+                        onPressed: () async {
+                          await AuthServices.deleteMessage(user.id);
+                        },
+                        icon: const Icon(
+                          Icons.delete,
+                          size: 25,
+                          color: Colors.red,
+                        ),
+                      ),
                     ],
                   ),
                 ),

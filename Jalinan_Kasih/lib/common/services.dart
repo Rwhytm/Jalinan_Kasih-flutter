@@ -37,7 +37,7 @@ class AuthServices {
       UserCredential result = await _auth.signInAnonymously();
       User? firebaseUser = result.user;
 
-      await FirebaseChatCore.instance.createUserInFirestore(
+      void hasil = await FirebaseChatCore.instance.createUserInFirestore(
         types.User(
           firstName: "user",
           id: result.user!.uid,
