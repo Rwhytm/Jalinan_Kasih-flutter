@@ -11,10 +11,11 @@ class _SublistPage4State extends State<SublistPage4> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: primaryColor,
+      color: kPrimaryColor,
       child: ListView(
         children: [
           AppBar(
+            backgroundColor: tombolColor,
             toolbarHeight: 80,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.vertical(
@@ -42,7 +43,7 @@ class _SublistPage4State extends State<SublistPage4> {
               vertical: 20,
             ),
             decoration: BoxDecoration(
-              color: primaryColor,
+              color: kPrimaryColor,
               borderRadius: const BorderRadius.only(
                 bottomLeft: Radius.circular(16),
                 bottomRight: Radius.circular(16),

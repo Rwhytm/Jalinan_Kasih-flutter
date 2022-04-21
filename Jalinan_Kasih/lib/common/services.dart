@@ -56,10 +56,12 @@ class AuthServices {
   }
 
 //coba membuat delete user dan room\
-  static Future<void> deleteMessage(String id_user) async {
+  static Future<void> deleteMessage(String id_user, String id_room) async {
     try {
       void hasil =
           await FirebaseChatCore.instance.deleteUserFromFirestore(id_user);
+
+      void delRoom = await FirebaseChatCore.instance.deleteRoom(id_room);
 
       return hasil;
     } catch (e) {

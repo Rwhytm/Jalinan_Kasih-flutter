@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
 import 'package:flutter_firebase_chat_core/flutter_firebase_chat_core.dart';
+import 'package:jalinan_kasih/common/constant.dart';
 import 'package:jalinan_kasih/pages/welcome.dart';
 import 'chat.dart';
 import 'login.dart';
@@ -96,6 +97,7 @@ class _RoomsPageState extends State<RoomsPage> {
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: tombolColor,
         actions: [
           IconButton(
             icon: const Icon(Icons.add),
@@ -137,6 +139,7 @@ class _RoomsPageState extends State<RoomsPage> {
               builder: (context, snapshot) {
                 if (!snapshot.hasData || snapshot.data!.isEmpty) {
                   return Container(
+                    color: kPrimaryColor,
                     alignment: Alignment.center,
                     margin: const EdgeInsets.only(
                       bottom: 200,

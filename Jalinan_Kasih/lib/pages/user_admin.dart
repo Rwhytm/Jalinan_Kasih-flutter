@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
 import 'package:flutter_firebase_chat_core/flutter_firebase_chat_core.dart';
+import 'package:jalinan_kasih/common/constant.dart';
 import 'package:jalinan_kasih/pages/wrapper.dart';
 import '../common/util.dart';
 import 'chat.dart';
@@ -48,6 +49,7 @@ class UsersPageAdmin extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: tombolColor,
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back,
@@ -84,8 +86,8 @@ class UsersPageAdmin extends StatelessWidget {
           return ListView.builder(
             itemCount: 1,
             itemBuilder: (context, index) {
-              final jumlah = (snapshot.data!.length) - 2;
-              final user = snapshot.data![0];
+              var jumlah = snapshot.data!.length - 1;
+              final user = snapshot.data![jumlah];
 
               return GestureDetector(
                 onTap: () {
@@ -93,7 +95,7 @@ class UsersPageAdmin extends StatelessWidget {
                 },
                 child: Container(
                   width: double.infinity,
-                  color: Colors.grey[100],
+                  color: Colors.white60,
                   padding: const EdgeInsets.symmetric(
                     horizontal: 16,
                     vertical: 8,

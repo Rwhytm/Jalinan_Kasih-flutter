@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
 import 'package:flutter_firebase_chat_core/flutter_firebase_chat_core.dart';
+import 'package:jalinan_kasih/common/constant.dart';
 import 'package:jalinan_kasih/common/services.dart';
 import 'package:jalinan_kasih/pages/wrapper.dart';
 import '../common/util.dart';
@@ -47,6 +48,7 @@ class UsersPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: tombolColor,
         title: Text('Chat'),
         leading: IconButton(
           icon: Icon(
@@ -83,7 +85,6 @@ class UsersPage extends StatelessWidget {
             itemCount: snapshot.data!.length,
             itemBuilder: (context, index) {
               final user = snapshot.data![index];
-
               return GestureDetector(
                 onTap: () {
                   _handlePressed(user, context);
@@ -106,16 +107,16 @@ class UsersPage extends StatelessWidget {
                           ),
                         ],
                       ),
-                      IconButton(
-                        onPressed: () async {
-                          await AuthServices.deleteMessage(user.id);
-                        },
-                        icon: const Icon(
-                          Icons.delete,
-                          size: 25,
-                          color: Colors.red,
-                        ),
-                      ),
+                      // IconButton(
+                      //   onPressed: () async {
+                      //     // await AuthServices.deleteMessage(user.id, );
+                      //   },
+                      //   icon: const Icon(
+                      //     Icons.delete,
+                      //     size: 25,
+                      //     color: Colors.red,
+                      //   ),
+                      // ),
                     ],
                   ),
                 ),

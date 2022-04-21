@@ -130,7 +130,7 @@ class _HomePageState extends State<HomePage> {
                             },
                             image: 'assets/icons/katapengantar.png',
                             title: 'Kata\n pengantar',
-                            backgroundColor: blueColor,
+                            backgroundColor: tombolColor,
                           ),
                         ),
                         Container(
@@ -146,7 +146,7 @@ class _HomePageState extends State<HomePage> {
                             },
                             image: 'assets/icons/icon1.png',
                             title: 'Siapakah\n aku',
-                            backgroundColor: blueColor,
+                            backgroundColor: tombolColor,
                           ),
                         ),
                         Container(
@@ -162,186 +162,98 @@ class _HomePageState extends State<HomePage> {
                             },
                             image: 'assets/icons/icon3.png',
                             title: 'Kesehatan\n reproduksi',
-                            backgroundColor: blueColor,
+                            backgroundColor: tombolColor,
                           ),
-                        )
+                        ),
+                        Container(
+                          margin: EdgeInsets.all(10),
+                          child: CustomMenuButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) {
+                                  return Deskripsi51();
+                                }),
+                              );
+                            },
+                            image: 'assets/icons/icon5.png',
+                            title: 'Fungsi\n keluarga',
+                            backgroundColor: tombolColor,
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.all(10),
+                          child: CustomMenuButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) {
+                                  return SublistPage2();
+                                }),
+                              );
+                            },
+                            image: 'assets/icons/icon2.png',
+                            title: 'Kenali dirimu\nlebih dalam',
+                            backgroundColor: tombolColor,
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.all(10),
+                          child: CustomMenuButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) {
+                                  return SublistPage4();
+                                }),
+                              );
+                            },
+                            image: 'assets/icons/icon4.png',
+                            title: 'Perkawinan\nremaja',
+                            backgroundColor: tombolColor,
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.all(10),
+                          child: CustomMenuButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) {
+                                  return Deskripsi61();
+                                }),
+                              );
+                            },
+                            image: 'assets/icons/icon6.png',
+                            title: 'Berencana itu\nkeren',
+                            backgroundColor: tombolColor,
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.all(10),
+                          child: CustomMenuButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) {
+                                  return TimPeneliti();
+                                }),
+                              );
+                            },
+                            image: 'assets/icons/timpeneliti.png',
+                            title: 'Tim\nPeneliti',
+                            backgroundColor: tombolColor,
+                          ),
+                        ),
                       ],
                     ),
                   ),
                 ),
                 CustomSublistButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) {
-                        return const Deskripsi21();
-                      }),
-                    );
-                  },
+                  onPressed: () {},
                   image: 'assets/images/deskripsi21.png',
-                  title: 'Mengenal Organ Reproduksi\nPerempuan',
+                  title: 'Artikel 1\n',
                 ),
-                CustomSublistButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) {
-                        return const Deskripsi21();
-                      }),
-                    );
-                  },
-                  image: 'assets/images/deskripsi21.png',
-                  title: 'Mengenal Organ Reproduksi\nPerempuan',
-                ),
-                CustomSublistButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) {
-                        return const Deskripsi21();
-                      }),
-                    );
-                  },
-                  image: 'assets/images/deskripsi21.png',
-                  title: 'Mengenal Organ Reproduksi\nPerempuan',
-                ),
-                CustomSublistButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) {
-                        return const Deskripsi21();
-                      }),
-                    );
-                  },
-                  image: 'assets/images/deskripsi21.png',
-                  title: 'Mengenal Organ Reproduksi\nPerempuan',
-                ),
-                CustomSublistButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) {
-                        return const Deskripsi21();
-                      }),
-                    );
-                  },
-                  image: 'assets/images/deskripsi21.png',
-                  title: 'Mengenal Organ Reproduksi\nPerempuan',
-                ),
-                CustomSublistButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) {
-                        return const Deskripsi21();
-                      }),
-                    );
-                  },
-                  image: 'assets/images/deskripsi21.png',
-                  title: 'Mengenal Organ Reproduksi\nPerempuan',
-                ),
-                // ),
-                // Row(
-                //   children: [
-                //     // Sebelah Kiri
-                //     Column(
-                //       children: [
-
-                //         // Menu 1
-                //
-
-                //         // Menu 3
-
-                //         SizedBox(
-                //           height: 40,
-                //         ),
-                //         CustomMenuButton(
-                //           onPressed: () {
-                //             Navigator.push(
-                //               context,
-                //               MaterialPageRoute(builder: (context) {
-                //                 return Deskripsi51();
-                //               }),
-                //             );
-                //           },
-                //           image: 'assets/icons/icon5.png',
-                //           title: 'Fungsi\n keluarga',
-                //           backgroundColor: blueColor,
-                //         ),
-                //       ],
-                //     ),
-                //     SizedBox(
-                //       width: 70,
-                //     ),
-                //     // Sebelah Kanan
-                //     Column(
-                //       children: [
-                //         CustomMenuButton(
-                //           onPressed: () {
-                //             Navigator.push(
-                //               context,
-                //               MaterialPageRoute(builder: (context) {
-                //                 return TimPeneliti();
-                //               }),
-                //             );
-                //           },
-                //           image: 'assets/icons/timpeneliti.png',
-                //           title: 'Tim\nPeneliti',
-                //           backgroundColor: pinkColor,
-                //         ),
-                //         SizedBox(
-                //           height: 40,
-                //         ),
-                //         CustomMenuButton(
-                //           onPressed: () {
-                //             Navigator.push(
-                //               context,
-                //               MaterialPageRoute(builder: (context) {
-                //                 return SublistPage2();
-                //               }),
-                //             );
-                //           },
-                //           image: 'assets/icons/icon2.png',
-                //           title: 'Kenali dirimu\nlebih dalam',
-                //           backgroundColor: pinkColor,
-                //         ),
-                //         SizedBox(
-                //           height: 40,
-                //         ),
-                //         CustomMenuButton(
-                //           onPressed: () {
-                //             Navigator.push(
-                //               context,
-                //               MaterialPageRoute(builder: (context) {
-                //                 return SublistPage4();
-                //               }),
-                //             );
-                //           },
-                //           image: 'assets/icons/icon4.png',
-                //           title: 'Perkawinan\nremaja',
-                //           backgroundColor: pinkColor,
-                //         ),
-                //         SizedBox(
-                //           height: 40,
-                //         ),
-                //         CustomMenuButton(
-                //           onPressed: () {
-                //             Navigator.push(
-                //               context,
-                //               MaterialPageRoute(builder: (context) {
-                //                 return Deskripsi61();
-                //               }),
-                //             );
-                //           },
-                //           image: 'assets/icons/icon6.png',
-                //           title: 'Berencana itu\nkeren',
-                //           backgroundColor: pinkColor,
-                //         ),
-                //       ],
-                //     ),
-                //   ],
-                // ),
               ],
             ),
           ),
