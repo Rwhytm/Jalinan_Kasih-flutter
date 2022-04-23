@@ -58,6 +58,13 @@ class _ChatPageState extends State<ChatPage> {
     );
   }
 
+  void _handleSendPressed(types.PartialText message) {
+    FirebaseChatCore.instance.sendMessage(
+      message,
+      widget.room.id,
+    );
+  }
+
   Future<void> _showMyDialog() async {
     final coba = FirebaseChatCore.instance.rooms;
     return showDialog<void>(
@@ -465,13 +472,6 @@ class _ChatPageState extends State<ChatPage> {
   void _faqMessage(String pesan) {
     FirebaseChatCore.instance.sendMessage(
       pesan,
-      widget.room.id,
-    );
-  }
-
-  void _handleSendPressed(types.PartialText message) {
-    FirebaseChatCore.instance.sendMessage(
-      message,
       widget.room.id,
     );
   }

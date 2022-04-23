@@ -107,6 +107,15 @@ class _HomePageState extends State<HomePage> {
                 //     fontSize: 16,
                 //   ),
                 // ),
+                Center(
+                  child: Container(
+                    child: Image(
+                      width: 300,
+                      height: 200,
+                      image: AssetImage('assets/images/suster.png'),
+                    ),
+                  ),
+                ),
 
                 SizedBox(
                   height: 200.0,
@@ -249,6 +258,15 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
+
+                const Text(
+                  'Berbagai Artikel',
+                  style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold),
+                ),
+
                 CustomSublistButton(
                   onPressed: () {},
                   image: 'assets/images/deskripsi21.png',

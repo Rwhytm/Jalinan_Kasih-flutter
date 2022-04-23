@@ -86,7 +86,7 @@ class UsersPageAdmin extends StatelessWidget {
           return ListView.builder(
             itemCount: 1,
             itemBuilder: (context, index) {
-              var jumlah = snapshot.data!.length - 1;
+              var jumlah = snapshot.data!.length - 2;
               final user = snapshot.data![jumlah];
 
               return GestureDetector(
