@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -65,6 +66,21 @@ class _ChatPageState extends State<ChatPage> {
     );
   }
 
+  void _botMessage(types.PartialText message) {
+    var roomId = widget.room.id;
+    FirebaseFirestore.instance
+        .collection('rooms')
+        .doc(roomId)
+        .collection('messages')
+        .add({
+      'authorId': '',
+      'createdAt': Timestamp.now(),
+      'text': 'ini coba balas\npake bot',
+      'type': 'text',
+      'updatedAt': Timestamp.now()
+    });
+  }
+
   Future<void> _showMyDialog() async {
     final coba = FirebaseChatCore.instance.rooms;
     return showDialog<void>(
@@ -77,7 +93,9 @@ class _ChatPageState extends State<ChatPage> {
             child: ListBody(
               children: <Widget>[
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    _botMessage(types.PartialText(text: 'text'));
+                  },
                   child: const Align(
                     alignment: Alignment.centerLeft,
                     child: Text('1. Apa saja organ reproduksi laki-laki'),
