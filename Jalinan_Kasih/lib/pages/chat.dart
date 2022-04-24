@@ -9,6 +9,7 @@ import 'package:jalinan_kasih/common/constant.dart';
 import 'package:jalinan_kasih/pages/user.dart';
 import 'package:jalinan_kasih/pages/user_admin.dart';
 import 'package:jalinan_kasih/pages/wrapper.dart';
+import 'package:jalinan_kasih/widgets/pertanyaan.dart';
 
 class ChatPage extends StatefulWidget {
   const ChatPage({
@@ -66,19 +67,21 @@ class _ChatPageState extends State<ChatPage> {
     );
   }
 
-  void _botMessage(types.PartialText message) {
+  void _botMessage(String message) {
     var roomId = widget.room.id;
     FirebaseFirestore.instance
         .collection('rooms')
         .doc(roomId)
         .collection('messages')
-        .add({
-      'authorId': '',
-      'createdAt': Timestamp.now(),
-      'text': 'ini coba balas\npake bot',
-      'type': 'text',
-      'updatedAt': Timestamp.now()
-    });
+        .add(
+      {
+        'authorId': '',
+        'createdAt': Timestamp.now(),
+        'text': message,
+        'type': 'text',
+        'updatedAt': Timestamp.now()
+      },
+    );
   }
 
   Future<void> _showMyDialog() async {
@@ -93,382 +96,607 @@ class _ChatPageState extends State<ChatPage> {
             child: ListBody(
               children: <Widget>[
                 TextButton(
-                  onPressed: () {
-                    _botMessage(types.PartialText(text: 'text'));
+                  onPressed: () async {
+                    _handleSendPressed(types.PartialText(text: '$pertanyaan1'));
+                    Future.delayed(Duration(seconds: 2), () {
+                      _botMessage('$jawaban1');
+                    });
                   },
                   child: const Align(
                     alignment: Alignment.centerLeft,
-                    child: Text('1. Apa saja organ reproduksi laki-laki'),
+                    child: Text('1. $pertanyaan1'),
                   ),
                 ),
                 TextButton(
                   onPressed: () {
-                    // Navigator.pop(context);
-                    // _handleImageSelection();
+                    _handleSendPressed(
+                      types.PartialText(text: '$pertanyaan2'),
+                    );
+                    Future.delayed(Duration(seconds: 2), () {
+                      _botMessage('$jawaban2');
+                    });
                   },
                   child: const Align(
                     alignment: Alignment.centerLeft,
-                    child: Text('2. Apa saja organ reproduksi laki-laki'),
+                    child: Text('2. $pertanyaan2'),
                   ),
                 ),
                 TextButton(
                   onPressed: () {
-                    // Navigator.pop(context);
-                    // _handleFileSelection();
+                    _handleSendPressed(
+                      types.PartialText(text: '$pertanyaan3'),
+                    );
+                    Future.delayed(
+                      Duration(seconds: 2),
+                      () {
+                        _botMessage('$jawaban3');
+                      },
+                    );
                   },
                   child: const Align(
                     alignment: Alignment.centerLeft,
-                    child: Text('3. apa saja organ reproduksi perempuan'),
+                    child: Text('3. $pertanyaan3'),
                   ),
                 ),
                 TextButton(
                   onPressed: () {
-                    // Navigator.pop(context);
-                    // _handleFileSelection();
+                    _handleSendPressed(
+                      types.PartialText(text: '$pertanyaan4'),
+                    );
+                    Future.delayed(
+                      Duration(seconds: 2),
+                      () {
+                        _botMessage('$jawaban4');
+                      },
+                    );
                   },
                   child: const Align(
                     alignment: Alignment.centerLeft,
-                    child: Text(
-                        '4. Bagaimana menjaga kebersihan organ reproduksi'),
+                    child: Text('4. $pertanyaan4'),
                   ),
                 ),
                 TextButton(
                   onPressed: () {
-                    // Navigator.pop(context);
-                    // _handleFileSelection();
+                    _handleSendPressed(
+                      types.PartialText(text: '$pertanyaan5'),
+                    );
+                    Future.delayed(
+                      Duration(seconds: 2),
+                      () {
+                        _botMessage('$jawaban5');
+                      },
+                    );
                   },
                   child: const Align(
                     alignment: Alignment.centerLeft,
-                    child: Text('5. apa itu pubertas'),
+                    child: Text('5. $pertanyaan5'),
                   ),
                 ),
                 TextButton(
                   onPressed: () {
-                    // Navigator.pop(context);
-                    // _handleFileSelection();
+                    _handleSendPressed(
+                      types.PartialText(text: '$pertanyaan6'),
+                    );
+                    Future.delayed(
+                      Duration(seconds: 2),
+                      () {
+                        _botMessage('$jawaban6');
+                      },
+                    );
                   },
                   child: const Align(
                     alignment: Alignment.centerLeft,
-                    child: Text(
-                        '6. Apa perubahan secara umum pada remaja laki-laki dan perempuan yang terjadi saat pubertas?'),
+                    child: Text('6. $pertanyaan6'),
                   ),
                 ),
                 TextButton(
                   onPressed: () {
-                    // Navigator.pop(context);
-                    // _handleFileSelection();
+                    _handleSendPressed(
+                      types.PartialText(text: '$pertanyaan7'),
+                    );
+                    Future.delayed(
+                      Duration(seconds: 2),
+                      () {
+                        _botMessage('$jawaban7');
+                      },
+                    );
                   },
                   child: const Align(
                     alignment: Alignment.centerLeft,
-                    child: Text(
-                        '7. Apa perubahan fisik secara khusus terjadi pada remaja perempuan saat pubertas?'),
+                    child: Text('7. $pertanyaan7'),
                   ),
                 ),
                 TextButton(
                   onPressed: () {
-                    // Navigator.pop(context);
-                    // _handleFileSelection();
+                    _handleSendPressed(
+                      types.PartialText(text: '$pertanyaan8'),
+                    );
+                    Future.delayed(
+                      Duration(seconds: 2),
+                      () {
+                        _botMessage('$jawaban8');
+                      },
+                    );
                   },
                   child: const Align(
                     alignment: Alignment.centerLeft,
-                    child: Text(
-                        '8. Apa perubahan fisik secara khusus terjadi pada remaja laki-laki saat pubertas?'),
+                    child: Text('8. $pertanyaan8'),
                   ),
                 ),
                 TextButton(
                   onPressed: () {
-                    // Navigator.pop(context);
-                    // _handleFileSelection();
+                    _handleSendPressed(
+                      types.PartialText(text: '$pertanyaan9'),
+                    );
+                    Future.delayed(
+                      Duration(seconds: 2),
+                      () {
+                        _botMessage('$jawaban9');
+                      },
+                    );
                   },
                   child: const Align(
                     alignment: Alignment.centerLeft,
-                    child: Text('9. Apa itu menstruasi?'),
+                    child: Text('9. $pertanyaan9'),
                   ),
                 ),
                 TextButton(
                   onPressed: () {
-                    // Navigator.pop(context);
-                    // _handleFileSelection();
+                    _handleSendPressed(
+                      types.PartialText(text: '$pertanyaan10'),
+                    );
+                    Future.delayed(
+                      Duration(seconds: 2),
+                      () {
+                        _botMessage('$jawaban10');
+                      },
+                    );
                   },
                   child: const Align(
                     alignment: Alignment.centerLeft,
-                    child: Text('10. Bagaimana proses menstruasi?'),
+                    child: Text('10. $pertanyaan10'),
                   ),
                 ),
                 TextButton(
                   onPressed: () {
-                    // Navigator.pop(context);
-                    // _handleFileSelection();
+                    _handleSendPressed(
+                      types.PartialText(text: '$pertanyaan11'),
+                    );
+                    Future.delayed(
+                      Duration(seconds: 2),
+                      () {
+                        _botMessage('$jawaban11');
+                      },
+                    );
                   },
                   child: const Align(
                     alignment: Alignment.centerLeft,
-                    child:
-                        Text('11. Apa yang harus dilakukan saat menstruasi?'),
+                    child: Text('11. $pertanyaan11'),
                   ),
                 ),
                 TextButton(
                   onPressed: () {
-                    // Navigator.pop(context);
-                    // _handleFileSelection();
+                    _handleSendPressed(
+                      types.PartialText(text: '$pertanyaan12'),
+                    );
+                    Future.delayed(
+                      Duration(seconds: 2),
+                      () {
+                        _botMessage('$jawaban12');
+                      },
+                    );
                   },
                   child: const Align(
                     alignment: Alignment.centerLeft,
-                    child: Text('11. Apa itu mimpi basah?'),
+                    child: Text('12. $pertanyaan12'),
                   ),
                 ),
                 TextButton(
                   onPressed: () {
-                    // Navigator.pop(context);
-                    // _handleFileSelection();
+                    _handleSendPressed(
+                      types.PartialText(text: '$pertanyaan13'),
+                    );
+                    Future.delayed(
+                      Duration(seconds: 2),
+                      () {
+                        _botMessage('$jawaban13');
+                      },
+                    );
                   },
                   child: const Align(
                     alignment: Alignment.centerLeft,
-                    child: Text('12. Bagaimana proses terjadinya mimpi basah?'),
+                    child: Text('13. $pertanyaan13'),
                   ),
                 ),
                 TextButton(
                   onPressed: () {
-                    // Navigator.pop(context);
-                    // _handleFileSelection();
+                    _handleSendPressed(
+                      types.PartialText(text: '$pertanyaan14'),
+                    );
+                    Future.delayed(
+                      Duration(seconds: 2),
+                      () {
+                        _botMessage('$jawaban14');
+                      },
+                    );
                   },
                   child: const Align(
                     alignment: Alignment.centerLeft,
-                    child: Text('13. Apa itu seks?'),
+                    child: Text('14. $pertanyaan14'),
                   ),
                 ),
                 TextButton(
                   onPressed: () {
-                    // Navigator.pop(context);
-                    // _handleFileSelection();
+                    _handleSendPressed(
+                      types.PartialText(text: '$pertanyaan15'),
+                    );
+                    Future.delayed(
+                      Duration(seconds: 2),
+                      () {
+                        _botMessage('$jawaban15');
+                      },
+                    );
                   },
                   child: const Align(
                     alignment: Alignment.centerLeft,
-                    child: Text('14. Apa itu seksualitas?'),
+                    child: Text('15. $pertanyaan15'),
                   ),
                 ),
                 TextButton(
                   onPressed: () {
-                    // Navigator.pop(context);
-                    // _handleFileSelection();
+                    _handleSendPressed(
+                      types.PartialText(text: '$pertanyaan16'),
+                    );
+                    Future.delayed(
+                      Duration(seconds: 2),
+                      () {
+                        _botMessage('$jawaban16');
+                      },
+                    );
                   },
                   child: const Align(
                     alignment: Alignment.centerLeft,
-                    child: Text('15. Apa itu orientasi seksual?'),
+                    child: Text('16. $pertanyaan16'),
                   ),
                 ),
                 TextButton(
                   onPressed: () {
-                    // Navigator.pop(context);
-                    // _handleFileSelection();
+                    _handleSendPressed(
+                      types.PartialText(text: '$pertanyaan17'),
+                    );
+                    Future.delayed(
+                      Duration(seconds: 2),
+                      () {
+                        _botMessage('$jawaban17');
+                      },
+                    );
                   },
                   child: const Align(
                     alignment: Alignment.centerLeft,
-                    child: Text(
-                        '16. Apa akibat seks sebelum menikah pada remaja?'),
+                    child: Text('17. $pertanyaan17'),
                   ),
                 ),
                 TextButton(
                   onPressed: () {
-                    // Navigator.pop(context);
-                    // _handleFileSelection();
+                    _handleSendPressed(
+                      types.PartialText(text: '$pertanyaan18'),
+                    );
+                    Future.delayed(
+                      Duration(seconds: 2),
+                      () {
+                        _botMessage('$jawaban18');
+                      },
+                    );
                   },
                   child: const Align(
                     alignment: Alignment.centerLeft,
-                    child: Text('17. Bagaimana proses tejadinya kehamilan?'),
+                    child: Text('18. $pertanyaan18'),
                   ),
                 ),
                 TextButton(
                   onPressed: () {
-                    // Navigator.pop(context);
-                    // _handleFileSelection();
+                    _handleSendPressed(
+                      types.PartialText(text: '$pertanyaan19'),
+                    );
+                    Future.delayed(
+                      Duration(seconds: 2),
+                      () {
+                        _botMessage('$jawaban19');
+                      },
+                    );
                   },
                   child: const Align(
                     alignment: Alignment.centerLeft,
-                    child: Text('18. Apa itu hubungan seksual?'),
+                    child: Text('19. $pertanyaan19'),
                   ),
                 ),
                 TextButton(
                   onPressed: () {
-                    // Navigator.pop(context);
-                    // _handleFileSelection();
+                    _handleSendPressed(
+                      types.PartialText(text: '$pertanyaan20'),
+                    );
+                    Future.delayed(
+                      Duration(seconds: 2),
+                      () {
+                        _botMessage('$jawaban20');
+                      },
+                    );
                   },
                   child: const Align(
                     alignment: Alignment.centerLeft,
-                    child: Text('19. Bagaimana kehamilan yang berisiko?'),
+                    child: Text('20. $pertanyaan20'),
                   ),
                 ),
                 TextButton(
                   onPressed: () {
-                    // Navigator.pop(context);
-                    // _handleFileSelection();
+                    _handleSendPressed(
+                      types.PartialText(text: '$pertanyaan21'),
+                    );
+                    Future.delayed(
+                      Duration(seconds: 2),
+                      () {
+                        _botMessage('$jawaban21');
+                      },
+                    );
                   },
                   child: const Align(
                     alignment: Alignment.centerLeft,
-                    child: Text(
-                        '20. Bagaimana menghindari empat kondisi kehamilan berisiko?'),
+                    child: Text('21. $pertanyaan21'),
                   ),
                 ),
                 TextButton(
                   onPressed: () {
-                    // Navigator.pop(context);
-                    // _handleFileSelection();
+                    _handleSendPressed(
+                      types.PartialText(text: '$pertanyaan22'),
+                    );
+                    Future.delayed(
+                      Duration(seconds: 2),
+                      () {
+                        _botMessage('$jawaban22');
+                      },
+                    );
                   },
                   child: const Align(
                     alignment: Alignment.centerLeft,
-                    child: Text('21. Apa itu stunting?'),
+                    child: Text('22. $pertanyaan22'),
                   ),
                 ),
                 TextButton(
                   onPressed: () {
-                    // Navigator.pop(context);
-                    // _handleFileSelection();
+                    _handleSendPressed(
+                      types.PartialText(text: '$pertanyaan23'),
+                    );
+                    Future.delayed(
+                      Duration(seconds: 2),
+                      () {
+                        _botMessage('$jawaban23');
+                      },
+                    );
                   },
                   child: const Align(
                     alignment: Alignment.centerLeft,
-                    child: Text('22. Apa faktor terjadinya stunting?'),
+                    child: Text('23. $pertanyaan23'),
                   ),
                 ),
                 TextButton(
                   onPressed: () {
-                    // Navigator.pop(context);
-                    // _handleFileSelection();
+                    _handleSendPressed(
+                      types.PartialText(text: '$pertanyaan24'),
+                    );
+                    Future.delayed(
+                      Duration(seconds: 2),
+                      () {
+                        _botMessage('$jawaban24');
+                      },
+                    );
                   },
                   child: const Align(
                     alignment: Alignment.centerLeft,
-                    child: Text('23. Apa itu hubungan seksual?'),
+                    child: Text('24. $pertanyaan24'),
                   ),
                 ),
                 TextButton(
                   onPressed: () {
-                    // Navigator.pop(context);
-                    // _handleFileSelection();
+                    _handleSendPressed(
+                      types.PartialText(text: '$pertanyaan25'),
+                    );
+                    Future.delayed(
+                      Duration(seconds: 2),
+                      () {
+                        _botMessage('$jawaban25');
+                      },
+                    );
                   },
                   child: const Align(
                     alignment: Alignment.centerLeft,
-                    child: Text('24. Apa ciri-ciri stunting?'),
+                    child: Text('25. $pertanyaan25'),
                   ),
                 ),
                 TextButton(
                   onPressed: () {
-                    // Navigator.pop(context);
-                    // _handleFileSelection();
+                    _handleSendPressed(
+                      types.PartialText(text: '$pertanyaan26'),
+                    );
+                    Future.delayed(
+                      Duration(seconds: 2),
+                      () {
+                        _botMessage('$jawaban26');
+                      },
+                    );
                   },
                   child: const Align(
                     alignment: Alignment.centerLeft,
-                    child:
-                        Text('25. Apa saja sumber gizi yang baik bagi remaja?'),
+                    child: Text('26. $pertanyaan26'),
                   ),
                 ),
                 TextButton(
                   onPressed: () {
-                    // Navigator.pop(context);
-                    // _handleFileSelection();
+                    _handleSendPressed(
+                      types.PartialText(text: '$pertanyaan27'),
+                    );
+                    Future.delayed(
+                      Duration(seconds: 2),
+                      () {
+                        _botMessage('$jawaban27');
+                      },
+                    );
                   },
                   child: const Align(
                     alignment: Alignment.centerLeft,
-                    child: Text(
-                        '26. Apa gangguan kesehatan yang terjadi terkait dengan gizi remaja?'),
+                    child: Text('27. $pertanyaan27'),
                   ),
                 ),
                 TextButton(
                   onPressed: () {
-                    // Navigator.pop(context);
-                    // _handleFileSelection();
+                    _handleSendPressed(
+                      types.PartialText(text: '$pertanyaan28'),
+                    );
+                    Future.delayed(
+                      Duration(seconds: 2),
+                      () {
+                        _botMessage('$jawaban28');
+                      },
+                    );
                   },
                   child: const Align(
                     alignment: Alignment.centerLeft,
-                    child: Text('27. Apa itu bullying?'),
+                    child: Text('28. $pertanyaan28'),
                   ),
                 ),
                 TextButton(
                   onPressed: () {
-                    // Navigator.pop(context);
-                    // _handleFileSelection();
+                    _handleSendPressed(
+                      types.PartialText(text: '$pertanyaan29'),
+                    );
+                    Future.delayed(
+                      Duration(seconds: 2),
+                      () {
+                        _botMessage('$jawaban29');
+                      },
+                    );
                   },
                   child: const Align(
                     alignment: Alignment.centerLeft,
-                    child: Text('28. Apa saja bentuk Tindakan bullying?'),
+                    child: Text('29. $pertanyaan29'),
                   ),
                 ),
                 TextButton(
                   onPressed: () {
-                    // Navigator.pop(context);
-                    // _handleFileSelection();
+                    _handleSendPressed(
+                      types.PartialText(text: '$pertanyaan30'),
+                    );
+                    Future.delayed(
+                      Duration(seconds: 2),
+                      () {
+                        _botMessage('$jawaban30');
+                      },
+                    );
                   },
                   child: const Align(
                     alignment: Alignment.centerLeft,
-                    child: Text('29. Apa itu kekerasan seksual?'),
+                    child: Text('30. $pertanyaan30'),
                   ),
                 ),
                 TextButton(
                   onPressed: () {
-                    // Navigator.pop(context);
-                    // _handleFileSelection();
+                    _handleSendPressed(
+                      types.PartialText(text: '$pertanyaan31'),
+                    );
+                    Future.delayed(
+                      Duration(seconds: 2),
+                      () {
+                        _botMessage('$jawaban31');
+                      },
+                    );
                   },
                   child: const Align(
                     alignment: Alignment.centerLeft,
-                    child: Text('30. Bagaimana menghindari kekerasan seksual?'),
+                    child: Text('31.	$pertanyaan31'),
                   ),
                 ),
                 TextButton(
                   onPressed: () {
-                    // Navigator.pop(context);
-                    // _handleFileSelection();
+                    _handleSendPressed(
+                      types.PartialText(text: '$pertanyaan32'),
+                    );
+                    Future.delayed(
+                      Duration(seconds: 2),
+                      () {
+                        _botMessage('$jawaban32');
+                      },
+                    );
                   },
                   child: const Align(
                     alignment: Alignment.centerLeft,
-                    child: Text('31.	Apa itu IMS?'),
+                    child: Text('32. $pertanyaan32'),
                   ),
                 ),
                 TextButton(
                   onPressed: () {
-                    // Navigator.pop(context);
-                    // _handleFileSelection();
+                    _handleSendPressed(
+                      types.PartialText(text: '$pertanyaan33'),
+                    );
+                    Future.delayed(
+                      Duration(seconds: 2),
+                      () {
+                        _botMessage('$jawaban33');
+                      },
+                    );
                   },
                   child: const Align(
                     alignment: Alignment.centerLeft,
-                    child: Text('32. Apa gejala-gejala IMS?'),
+                    child: Text('33. $pertanyaan33'),
                   ),
                 ),
                 TextButton(
                   onPressed: () {
-                    // Navigator.pop(context);
-                    // _handleFileSelection();
+                    _handleSendPressed(
+                      types.PartialText(text: '$pertanyaan34'),
+                    );
+                    Future.delayed(
+                      Duration(seconds: 2),
+                      () {
+                        _botMessage('$jawaban34');
+                      },
+                    );
                   },
                   child: const Align(
                     alignment: Alignment.centerLeft,
-                    child: Text('33. Apa itu HIV/AIDS?'),
+                    child: Text('34. $pertanyaan34'),
                   ),
                 ),
                 TextButton(
                   onPressed: () {
-                    // Navigator.pop(context);
-                    // _handleFileSelection();
+                    _handleSendPressed(
+                      types.PartialText(text: '$pertanyaan35'),
+                    );
+                    Future.delayed(
+                      Duration(seconds: 2),
+                      () {
+                        _botMessage('$jawaban35');
+                      },
+                    );
                   },
                   child: const Align(
                     alignment: Alignment.centerLeft,
-                    child: Text('34. Apa gejala HIV/AIDS?'),
+                    child: Text('35. $pertanyaan35'),
                   ),
                 ),
                 TextButton(
                   onPressed: () {
-                    // Navigator.pop(context);
-                    // _handleFileSelection();
+                    _handleSendPressed(
+                      types.PartialText(text: '$pertanyaan36'),
+                    );
+                    Future.delayed(
+                      Duration(seconds: 2),
+                      () {
+                        _botMessage('$jawaban36');
+                      },
+                    );
                   },
                   child: const Align(
                     alignment: Alignment.centerLeft,
-                    child: Text(
-                        '35. Apa risiko Kesehatan terhadap perkawinan remaja?'),
-                  ),
-                ),
-                TextButton(
-                  onPressed: () {
-                    // Navigator.pop(context);
-                    // _handleFileSelection();
-                  },
-                  child: const Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text('36. Berapa usia ideal untuk menikah?'),
+                    child: Text('36. '),
                   ),
                 ),
               ],
