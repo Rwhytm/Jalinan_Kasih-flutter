@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
@@ -47,6 +48,28 @@ class UsersPageAdmin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    User? firebaseUser = FirebaseAuth.instance.currentUser;
+    final user2 = FirebaseFirestore.instance
+        .collection('users')
+        .orderBy('role', descending: false)
+        .snapshots()
+        .map(
+          (snapshot) => snapshot.docs.fold<List<types.User>>(
+            [],
+            (previousValue, doc) {
+              if (firebaseUser!.uid == doc.id) return previousValue;
+
+              final data = doc.data();
+
+              data['createdAt'] = data['createdAt']?.millisecondsSinceEpoch;
+              data['id'] = doc.id;
+              data['lastSeen'] = data['lastSeen']?.millisecondsSinceEpoch;
+              data['updatedAt'] = data['updatedAt']?.millisecondsSinceEpoch;
+
+              return [...previousValue, types.User.fromJson(data)];
+            },
+          ),
+        );
     return Scaffold(
       appBar: AppBar(
         backgroundColor: tombolColor,
@@ -70,7 +93,7 @@ class UsersPageAdmin extends StatelessWidget {
         title: const Text('Admin Support'),
       ),
       body: StreamBuilder<List<types.User>>(
-        stream: FirebaseChatCore.instance.users(),
+        stream: user2,
         initialData: const [],
         builder: (context, snapshot) {
           if (!snapshot.hasData || snapshot.data!.isEmpty) {
@@ -86,8 +109,8 @@ class UsersPageAdmin extends StatelessWidget {
           return ListView.builder(
             itemCount: 1,
             itemBuilder: (context, index) {
-              var jumlah = snapshot.data!.length - 2;
-              final user = snapshot.data![jumlah];
+              // var jumlah = snapshot.data!.length - 2;
+              final user = snapshot.data![0];
 
               return GestureDetector(
                 onTap: () {

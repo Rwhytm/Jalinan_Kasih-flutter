@@ -75,7 +75,7 @@ class _ChatPageState extends State<ChatPage> {
         .collection('messages')
         .add(
       {
-        'authorId': '',
+        'authorId': 'Y3A6cYwVuUMvwBykGhfkUZ3iKNC3',
         'createdAt': Timestamp.now(),
         'text': message,
         'type': 'text',
@@ -696,7 +696,7 @@ class _ChatPageState extends State<ChatPage> {
                   },
                   child: const Align(
                     alignment: Alignment.centerLeft,
-                    child: Text('36. '),
+                    child: Text('36. $pertanyaan36'),
                   ),
                 ),
               ],
