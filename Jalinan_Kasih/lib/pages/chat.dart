@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -60,16 +62,16 @@ class _ChatPageState extends State<ChatPage> {
     );
   }
 
-  void _handleSendPressed(types.PartialText message) {
+  Future<void> _handleSendPressed(types.PartialText message) async {
     FirebaseChatCore.instance.sendMessage(
       message,
       widget.room.id,
     );
   }
 
-  void _botMessage(String message) {
+  Future<void> _botMessage(String message) async {
     var roomId = widget.room.id;
-    FirebaseFirestore.instance
+    await FirebaseFirestore.instance
         .collection('rooms')
         .doc(roomId)
         .collection('messages')
@@ -97,8 +99,9 @@ class _ChatPageState extends State<ChatPage> {
               children: <Widget>[
                 TextButton(
                   onPressed: () async {
-                    _handleSendPressed(types.PartialText(text: '$pertanyaan1'));
-                    Future.delayed(Duration(seconds: 2), () {
+                    await _handleSendPressed(
+                        types.PartialText(text: '$pertanyaan1'));
+                    await Future.delayed(Duration(seconds: 2), () {
                       _botMessage('$jawaban1');
                     });
                   },
@@ -108,11 +111,11 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {
-                    _handleSendPressed(
+                  onPressed: () async {
+                    await _handleSendPressed(
                       types.PartialText(text: '$pertanyaan2'),
                     );
-                    Future.delayed(Duration(seconds: 2), () {
+                    await Future.delayed(Duration(seconds: 2), () {
                       _botMessage('$jawaban2');
                     });
                   },
@@ -122,11 +125,11 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {
-                    _handleSendPressed(
+                  onPressed: () async {
+                    await _handleSendPressed(
                       types.PartialText(text: '$pertanyaan3'),
                     );
-                    Future.delayed(
+                    await Future.delayed(
                       Duration(seconds: 2),
                       () {
                         _botMessage('$jawaban3');
@@ -139,11 +142,11 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {
-                    _handleSendPressed(
+                  onPressed: () async {
+                    await _handleSendPressed(
                       types.PartialText(text: '$pertanyaan4'),
                     );
-                    Future.delayed(
+                    await Future.delayed(
                       Duration(seconds: 2),
                       () {
                         _botMessage('$jawaban4');
@@ -156,11 +159,11 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {
-                    _handleSendPressed(
+                  onPressed: () async {
+                    await _handleSendPressed(
                       types.PartialText(text: '$pertanyaan5'),
                     );
-                    Future.delayed(
+                    await Future.delayed(
                       Duration(seconds: 2),
                       () {
                         _botMessage('$jawaban5');
@@ -173,11 +176,11 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {
-                    _handleSendPressed(
+                  onPressed: () async {
+                    await _handleSendPressed(
                       types.PartialText(text: '$pertanyaan6'),
                     );
-                    Future.delayed(
+                    await Future.delayed(
                       Duration(seconds: 2),
                       () {
                         _botMessage('$jawaban6');
@@ -190,11 +193,11 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {
-                    _handleSendPressed(
+                  onPressed: () async {
+                    await _handleSendPressed(
                       types.PartialText(text: '$pertanyaan7'),
                     );
-                    Future.delayed(
+                    await Future.delayed(
                       Duration(seconds: 2),
                       () {
                         _botMessage('$jawaban7');
@@ -207,11 +210,11 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {
-                    _handleSendPressed(
+                  onPressed: () async {
+                    await _handleSendPressed(
                       types.PartialText(text: '$pertanyaan8'),
                     );
-                    Future.delayed(
+                    await Future.delayed(
                       Duration(seconds: 2),
                       () {
                         _botMessage('$jawaban8');
@@ -224,11 +227,11 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {
-                    _handleSendPressed(
+                  onPressed: () async {
+                    await _handleSendPressed(
                       types.PartialText(text: '$pertanyaan9'),
                     );
-                    Future.delayed(
+                    await Future.delayed(
                       Duration(seconds: 2),
                       () {
                         _botMessage('$jawaban9');
@@ -241,11 +244,11 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {
-                    _handleSendPressed(
+                  onPressed: () async {
+                    await _handleSendPressed(
                       types.PartialText(text: '$pertanyaan10'),
                     );
-                    Future.delayed(
+                    await Future.delayed(
                       Duration(seconds: 2),
                       () {
                         _botMessage('$jawaban10');
@@ -258,11 +261,11 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {
-                    _handleSendPressed(
+                  onPressed: () async {
+                    await _handleSendPressed(
                       types.PartialText(text: '$pertanyaan11'),
                     );
-                    Future.delayed(
+                    await Future.delayed(
                       Duration(seconds: 2),
                       () {
                         _botMessage('$jawaban11');
@@ -275,11 +278,11 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {
-                    _handleSendPressed(
+                  onPressed: () async {
+                    await _handleSendPressed(
                       types.PartialText(text: '$pertanyaan12'),
                     );
-                    Future.delayed(
+                    await Future.delayed(
                       Duration(seconds: 2),
                       () {
                         _botMessage('$jawaban12');
@@ -292,11 +295,11 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {
-                    _handleSendPressed(
+                  onPressed: () async {
+                    await _handleSendPressed(
                       types.PartialText(text: '$pertanyaan13'),
                     );
-                    Future.delayed(
+                    await Future.delayed(
                       Duration(seconds: 2),
                       () {
                         _botMessage('$jawaban13');
@@ -309,11 +312,11 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {
-                    _handleSendPressed(
+                  onPressed: () async {
+                    await _handleSendPressed(
                       types.PartialText(text: '$pertanyaan14'),
                     );
-                    Future.delayed(
+                    await Future.delayed(
                       Duration(seconds: 2),
                       () {
                         _botMessage('$jawaban14');
@@ -326,11 +329,11 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {
-                    _handleSendPressed(
+                  onPressed: () async {
+                    await _handleSendPressed(
                       types.PartialText(text: '$pertanyaan15'),
                     );
-                    Future.delayed(
+                    await Future.delayed(
                       Duration(seconds: 2),
                       () {
                         _botMessage('$jawaban15');
@@ -343,11 +346,11 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {
-                    _handleSendPressed(
+                  onPressed: () async {
+                    await _handleSendPressed(
                       types.PartialText(text: '$pertanyaan16'),
                     );
-                    Future.delayed(
+                    await Future.delayed(
                       Duration(seconds: 2),
                       () {
                         _botMessage('$jawaban16');
@@ -360,11 +363,11 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {
-                    _handleSendPressed(
+                  onPressed: () async {
+                    await _handleSendPressed(
                       types.PartialText(text: '$pertanyaan17'),
                     );
-                    Future.delayed(
+                    await Future.delayed(
                       Duration(seconds: 2),
                       () {
                         _botMessage('$jawaban17');
@@ -377,11 +380,11 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {
-                    _handleSendPressed(
+                  onPressed: () async {
+                    await _handleSendPressed(
                       types.PartialText(text: '$pertanyaan18'),
                     );
-                    Future.delayed(
+                    await Future.delayed(
                       Duration(seconds: 2),
                       () {
                         _botMessage('$jawaban18');
@@ -394,11 +397,11 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {
-                    _handleSendPressed(
+                  onPressed: () async {
+                    await _handleSendPressed(
                       types.PartialText(text: '$pertanyaan19'),
                     );
-                    Future.delayed(
+                    await Future.delayed(
                       Duration(seconds: 2),
                       () {
                         _botMessage('$jawaban19');
@@ -411,11 +414,11 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {
-                    _handleSendPressed(
+                  onPressed: () async {
+                    await _handleSendPressed(
                       types.PartialText(text: '$pertanyaan20'),
                     );
-                    Future.delayed(
+                    await Future.delayed(
                       Duration(seconds: 2),
                       () {
                         _botMessage('$jawaban20');
@@ -428,11 +431,11 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {
-                    _handleSendPressed(
+                  onPressed: () async {
+                    await _handleSendPressed(
                       types.PartialText(text: '$pertanyaan21'),
                     );
-                    Future.delayed(
+                    await Future.delayed(
                       Duration(seconds: 2),
                       () {
                         _botMessage('$jawaban21');
@@ -445,11 +448,11 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {
-                    _handleSendPressed(
+                  onPressed: () async {
+                    await _handleSendPressed(
                       types.PartialText(text: '$pertanyaan22'),
                     );
-                    Future.delayed(
+                    await Future.delayed(
                       Duration(seconds: 2),
                       () {
                         _botMessage('$jawaban22');
@@ -462,11 +465,11 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {
-                    _handleSendPressed(
+                  onPressed: () async {
+                    await _handleSendPressed(
                       types.PartialText(text: '$pertanyaan23'),
                     );
-                    Future.delayed(
+                    await Future.delayed(
                       Duration(seconds: 2),
                       () {
                         _botMessage('$jawaban23');
@@ -479,11 +482,11 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {
-                    _handleSendPressed(
+                  onPressed: () async {
+                    await _handleSendPressed(
                       types.PartialText(text: '$pertanyaan24'),
                     );
-                    Future.delayed(
+                    await Future.delayed(
                       Duration(seconds: 2),
                       () {
                         _botMessage('$jawaban24');
@@ -496,11 +499,11 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {
-                    _handleSendPressed(
+                  onPressed: () async {
+                    await _handleSendPressed(
                       types.PartialText(text: '$pertanyaan25'),
                     );
-                    Future.delayed(
+                    await Future.delayed(
                       Duration(seconds: 2),
                       () {
                         _botMessage('$jawaban25');
@@ -513,11 +516,11 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {
-                    _handleSendPressed(
+                  onPressed: () async {
+                    await _handleSendPressed(
                       types.PartialText(text: '$pertanyaan26'),
                     );
-                    Future.delayed(
+                    await Future.delayed(
                       Duration(seconds: 2),
                       () {
                         _botMessage('$jawaban26');
@@ -530,11 +533,11 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {
-                    _handleSendPressed(
+                  onPressed: () async {
+                    await _handleSendPressed(
                       types.PartialText(text: '$pertanyaan27'),
                     );
-                    Future.delayed(
+                    await Future.delayed(
                       Duration(seconds: 2),
                       () {
                         _botMessage('$jawaban27');
@@ -547,11 +550,11 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {
-                    _handleSendPressed(
+                  onPressed: () async {
+                    await _handleSendPressed(
                       types.PartialText(text: '$pertanyaan28'),
                     );
-                    Future.delayed(
+                    await Future.delayed(
                       Duration(seconds: 2),
                       () {
                         _botMessage('$jawaban28');
@@ -564,11 +567,11 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {
-                    _handleSendPressed(
+                  onPressed: () async {
+                    await _handleSendPressed(
                       types.PartialText(text: '$pertanyaan29'),
                     );
-                    Future.delayed(
+                    await Future.delayed(
                       Duration(seconds: 2),
                       () {
                         _botMessage('$jawaban29');
@@ -581,11 +584,11 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {
-                    _handleSendPressed(
+                  onPressed: () async {
+                    await _handleSendPressed(
                       types.PartialText(text: '$pertanyaan30'),
                     );
-                    Future.delayed(
+                    await Future.delayed(
                       Duration(seconds: 2),
                       () {
                         _botMessage('$jawaban30');
@@ -598,11 +601,11 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {
-                    _handleSendPressed(
+                  onPressed: () async {
+                    await _handleSendPressed(
                       types.PartialText(text: '$pertanyaan31'),
                     );
-                    Future.delayed(
+                    await Future.delayed(
                       Duration(seconds: 2),
                       () {
                         _botMessage('$jawaban31');
@@ -615,11 +618,11 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {
-                    _handleSendPressed(
+                  onPressed: () async {
+                    await _handleSendPressed(
                       types.PartialText(text: '$pertanyaan32'),
                     );
-                    Future.delayed(
+                    await Future.delayed(
                       Duration(seconds: 2),
                       () {
                         _botMessage('$jawaban32');
@@ -632,11 +635,11 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {
-                    _handleSendPressed(
+                  onPressed: () async {
+                    await _handleSendPressed(
                       types.PartialText(text: '$pertanyaan33'),
                     );
-                    Future.delayed(
+                    await Future.delayed(
                       Duration(seconds: 2),
                       () {
                         _botMessage('$jawaban33');
@@ -649,11 +652,11 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {
-                    _handleSendPressed(
+                  onPressed: () async {
+                    await _handleSendPressed(
                       types.PartialText(text: '$pertanyaan34'),
                     );
-                    Future.delayed(
+                    await Future.delayed(
                       Duration(seconds: 2),
                       () {
                         _botMessage('$jawaban34');
@@ -666,11 +669,11 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {
-                    _handleSendPressed(
+                  onPressed: () async {
+                    await _handleSendPressed(
                       types.PartialText(text: '$pertanyaan35'),
                     );
-                    Future.delayed(
+                    await Future.delayed(
                       Duration(seconds: 2),
                       () {
                         _botMessage('$jawaban35');
@@ -683,11 +686,11 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {
-                    _handleSendPressed(
+                  onPressed: () async {
+                    await _handleSendPressed(
                       types.PartialText(text: '$pertanyaan36'),
                     );
-                    Future.delayed(
+                    await Future.delayed(
                       Duration(seconds: 2),
                       () {
                         _botMessage('$jawaban36');
@@ -712,13 +715,6 @@ class _ChatPageState extends State<ChatPage> {
           ],
         );
       },
-    );
-  }
-
-  void _faqMessage(String pesan) {
-    FirebaseChatCore.instance.sendMessage(
-      pesan,
-      widget.room.id,
     );
   }
 
@@ -769,7 +765,7 @@ class _ChatPageState extends State<ChatPage> {
                 child: Chat(
                   // isAttachmentUploading: _isAttachmentUploading,
                   messages: snapshot.data ?? [],
-                  onAttachmentPressed: _showMyDialog,
+                  // onAttachmentPressed: _showMyDialog,
                   // onMessageTap: _handleMessageTap,
                   // onPreviewDataFetched: _handlePreviewDataFetched,
                   onSendPressed: _handleSendPressed,
@@ -782,13 +778,14 @@ class _ChatPageState extends State<ChatPage> {
           );
         },
       ),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: () {
-      //     _showMyDialog();
-      //   },
-      //   child: Icon(Icons.question_mark_sharp),
-      //   backgroundColor: tombolColor,
-      // ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          _showMyDialog();
+        },
+        child: Icon(Icons.question_mark_sharp),
+        backgroundColor: Colors.green,
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
     );
   }
 }
