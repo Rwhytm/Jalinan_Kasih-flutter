@@ -48,7 +48,7 @@ class UsersPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: tombolColor,
+        backgroundColor: kPrimaryColor,
         title: Text('Chat'),
         leading: IconButton(
           icon: Icon(

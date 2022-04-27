@@ -91,14 +91,13 @@ class _HomePageState extends State<HomePage> {
                             icon: const Icon(
                               Icons.app_registration,
                               size: 25,
-                              color: Colors.white,
+                              color: Colors.black,
                             ),
                           )
                         : const Text(""),
                   ],
                 ),
-
-                // SizedBox(
+                // const SizedBox(
                 //   height: 30,
                 // ),
                 // Text(
@@ -107,16 +106,19 @@ class _HomePageState extends State<HomePage> {
                 //     fontSize: 16,
                 //   ),
                 // ),
+                // const SizedBox(
+                //   height: 20,
+                // ),
                 Center(
                   child: Container(
+                    width: double.infinity,
                     child: Image(
                       width: 300,
                       height: 200,
-                      image: AssetImage('assets/images/suster.png'),
+                      image: AssetImage('assets/images/ic_launcher.png'),
                     ),
                   ),
                 ),
-
                 SizedBox(
                   height: 200.0,
                   child: ListView.builder(
@@ -258,7 +260,6 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
-
                 const Text(
                   'Berbagai Artikel',
                   style: TextStyle(
@@ -266,7 +267,6 @@ class _HomePageState extends State<HomePage> {
                       color: Colors.white,
                       fontWeight: FontWeight.bold),
                 ),
-
                 CustomSublistButton(
                   onPressed: () {},
                   image: 'assets/images/deskripsi21.png',

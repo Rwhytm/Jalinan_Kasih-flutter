@@ -58,7 +58,7 @@ class CustomSublistButton extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10.0),
               ),
             ),
-            backgroundColor: MaterialStateProperty.all(artikelColor),
+            backgroundColor: MaterialStateProperty.all(tombolColor),
           ),
         ),
       ),

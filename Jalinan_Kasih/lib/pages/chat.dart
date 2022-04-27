@@ -723,7 +723,7 @@ class _ChatPageState extends State<ChatPage> {
     var currentUser = FirebaseAuth.instance.currentUser;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: tombolColor,
+        backgroundColor: kPrimaryColor,
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back,
@@ -783,9 +783,9 @@ class _ChatPageState extends State<ChatPage> {
           _showMyDialog();
         },
         child: Icon(Icons.question_mark_sharp),
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.red,
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
+      floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
     );
   }
 }

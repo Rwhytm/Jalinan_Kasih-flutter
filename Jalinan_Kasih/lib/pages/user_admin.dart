@@ -72,7 +72,7 @@ class UsersPageAdmin extends StatelessWidget {
         );
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: tombolColor,
+        backgroundColor: kPrimaryColor,
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back,
