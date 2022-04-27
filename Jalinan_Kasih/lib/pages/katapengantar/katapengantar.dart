@@ -39,13 +39,13 @@ class KataPengantar extends StatelessWidget {
                           '''$tab Puji dan syukur kami panjatkan ke hadirat Allah SWT yang telah mencurahkan rahmat dan hidayah-Nya sehingga inovasi Aplikasi “Jalinan Kasih (RemaJA PeduLI DeNgAN KesehAtan ReprodukSI)” ini dapat dihasilkan.'''),
                   CustomDeskripsi(
                       deskripsi:
-                          '''$tab Aplikasi ini merupakan versi digital yang mengacu pada modul dari Direktorat Bina Ketahanan Keluarga, BKKBN & John Hopkins Center for Communication Programs , Modul Perencanaan Masa Depan dan Ketahanan Reproduksi Untuk Pendidik Sebaya Remaja usia 10-14 tahun, usia 15-19 tahun dan usia 20-24 tahun.'''),
+                          '''$tab Aplikasi ini merupakan versi digital yang mengacu ada modul Direktorat Bina Ketahanan Keluarga. BKKBN & John Hapkins Center For Communication Programs. Modul perencanaan Masa Depan dan Ketahanan Reproduksi untuk Pendidik Sebaya Remaja usia 10-14 tahun, usia 15-19 tahun dan usia 20-24 tahun.'''),
                   CustomDeskripsi(
                       deskripsi:
-                          '''$tab Ucapan terimakasih kami sampaikan kepada Poltekkes Kemenkes Bengkulu yang telah memberikan dana penelitian skema Penelitian Kerjasama Perguruan Tinggi, sehingga output penelitian ini bisa dihasilkan. Ucapan terimakasih juga kami sampaikan kepada Poltekkes Kemenkes Tasikmalaya yang telah bersedia menjadi mitra dalam penelitian dan berkontribusi dalam menghasilkan output penelitian ini.'''),
+                          '''$tab Ucapan terimakasih kami sampaikan kepada Poltekkes Kemenkes Bengkulu yang telah memberikan dana penelitian skema Penelitian Terapan Unggulan Perguruan Tinggi dan Ucapan terimakasih juga kami sampaikan kepada perwakilan BKKBN Propinsi Bengkulu sebagai mitra pengguna dalam pemanfaatan output hasil penelitian ini.'''),
                   CustomDeskripsi(
                       deskripsi:
-                          '''$tab Pembuatan Aplikasi “Jalinan Kasih (RemaJA PeduLI DeNgAN KesehAtan ReprodukSI)” ini bertujuan untuk memudahkan dalam memberikan edukasi tentang perencanaan masa depan dan kesehatan reproduksi bagi remaja, sehingga membantu remaja dalam pendewasaan usia perkawinan dan perencanaan keluarga.'''),
+                          '''$tab Penelitian Aplikasi Jalinan Kasih ini bertujuan untuk memudahkan dalam memberikan edukasi tentang perencanaan masa depan dan kesehatan reproduksi bagi remaja, sehingga membantu remaja dalam pendewasaan usia perkawinan dan perencanaan keluarga.'''),
                   SizedBox(
                     height: 20,
                   ),
@@ -54,7 +54,7 @@ class KataPengantar extends StatelessWidget {
                     child: Align(
                         alignment: Alignment.centerRight,
                         child: Text(
-                          'Bengkulu, 30 September 2021',
+                          'Bengkulu 31 Maret 2021',
                         )),
                   ),
                   SizedBox(
