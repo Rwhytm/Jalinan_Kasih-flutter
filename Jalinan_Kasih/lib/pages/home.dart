@@ -149,6 +149,22 @@ class _HomePageState extends State<HomePage> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(builder: (context) {
+                                  return TimPeneliti();
+                                }),
+                              );
+                            },
+                            image: 'assets/icons/timpeneliti.png',
+                            title: 'Tim\nPeneliti',
+                            backgroundColor: tombolColor,
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.all(10),
+                          child: CustomMenuButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) {
                                   return Deskripsi1();
                                 }),
                               );
@@ -235,22 +251,6 @@ class _HomePageState extends State<HomePage> {
                             },
                             image: 'assets/icons/icon6.png',
                             title: 'Berencana itu\nkeren',
-                            backgroundColor: tombolColor,
-                          ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.all(10),
-                          child: CustomMenuButton(
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) {
-                                  return TimPeneliti();
-                                }),
-                              );
-                            },
-                            image: 'assets/icons/timpeneliti.png',
-                            title: 'Tim\nPeneliti',
                             backgroundColor: tombolColor,
                           ),
                         ),

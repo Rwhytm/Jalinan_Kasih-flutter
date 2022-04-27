@@ -42,13 +42,13 @@ class TimPeneliti extends StatelessWidget {
                   ),
                   const CustomDeskripsi(
                       deskripsi:
-                          '''LIA NURCAHYANI, SST.MPH (Prodi Diploma Tiga Kebidanan Cirebon Poltekkes Kemenkes Tasikmalaya)'''),
+                          '''Dr. Demsa Simbolon, SKM.MKM (Jurusan Gizi Poltekkes Kemenkes Bengkulu)'''),
                   const SizedBox(
                     height: 10,
                   ),
                   const CustomDeskripsi(
                       deskripsi:
-                          '''Dr. SUSILO DAMARINI, SKM.MPH ((Prodi Sarjana Terapan Kebidanan Poltekkes Kemenkes Bengkulu)'''),
+                          '''Frensi Riastuti, S.Sos (Perwakilan BKKBN Propinsi Bengkulu)'''),
                   const SizedBox(
                     height: 10,
                   ),
