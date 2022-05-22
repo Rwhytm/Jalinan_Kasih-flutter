@@ -280,9 +280,17 @@ class _HomePageState extends State<HomePage> {
                   title: 'Pernikahan Dini di Kalangan Remaja\n',
                 ),
                 CustomSublistButton(
-                  onPressed: () {},
-                  image: 'assets/images/deskripsi21.png',
-                  title: 'Artikel 1\n',
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) {
+                        return Artikel2();
+                      }),
+                    );
+                  },
+                  image: 'assets/images/artikel2.jpg',
+                  title:
+                      'Pernikahan Dini di Indonesia \nMeningkat di Masa Pandemi\n',
                 ),
                 CustomSublistButton(
                   onPressed: () {
