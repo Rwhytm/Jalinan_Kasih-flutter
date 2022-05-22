@@ -306,9 +306,17 @@ class _HomePageState extends State<HomePage> {
                       '5 Alasan Pernikahan Dini Tidak Dianjurkan\n Bisa Menimbulkan Beragam Masalah',
                 ),
                 CustomSublistButton(
-                  onPressed: () {},
-                  image: 'assets/images/deskripsi21.png',
-                  title: 'Artikel 1\n',
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) {
+                        return Artikel4();
+                      }),
+                    );
+                  },
+                  image: 'assets/images/artikel4.jpg',
+                  title:
+                      'Tekan Angka Pernikahan Usia Dini,\nDP3AP2 DIY Soroti Peran Keluarga dan \nBatas Umur Minimal',
                 ),
               ],
             ),

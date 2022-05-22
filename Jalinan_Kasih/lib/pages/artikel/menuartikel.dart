@@ -5,3 +5,4 @@ import 'package:jalinan_kasih/widgets/widgets.dart';
 part 'artikel1.dart';
 part 'artikel2.dart';
 part 'artikel3.dart';
+part 'artikel4.dart';
