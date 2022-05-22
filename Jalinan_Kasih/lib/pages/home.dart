@@ -268,9 +268,16 @@ class _HomePageState extends State<HomePage> {
                       fontWeight: FontWeight.bold),
                 ),
                 CustomSublistButton(
-                  onPressed: () {},
-                  image: 'assets/images/deskripsi21.png',
-                  title: 'Artikel 1\n',
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) {
+                        return Artikel1();
+                      }),
+                    );
+                  },
+                  image: 'assets/images/artikel1.jpg',
+                  title: 'Pernikahan Dini di Kalangan Remaja\n',
                 ),
                 CustomSublistButton(
                   onPressed: () {},

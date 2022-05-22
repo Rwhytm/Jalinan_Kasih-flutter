@@ -22,6 +22,7 @@ class Artikel3 extends StatelessWidget {
                   DeskripsiTitle(
                       text:
                           '5 Alasan Pernikahan Dini Tidak Dianjurkan, Bisa Menimbulkan Beragam Masalah'),
+                  DeskripsiImage(image: 'assets/images/artikel3.jpg'),
                   CustomDeskripsi(
                       deskripsi:
                           '''$tab Di Indonesia telah diatur dalam perundang-undangan bahwa batasan menikah adalah usia 19 tahun. Jika belum mencapai usia tersebut maka tergolong ke dalam pernikahan dini dan sangat tidak dianjurkan untuk dilaksanakan.'''),
