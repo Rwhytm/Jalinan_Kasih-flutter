@@ -9,6 +9,7 @@ import 'package:flutter_firebase_chat_core/flutter_firebase_chat_core.dart';
 import 'package:jalinan_kasih/common/common.dart';
 import 'package:jalinan_kasih/common/constant.dart';
 import 'package:jalinan_kasih/common/services.dart';
+import 'package:jalinan_kasih/pages/artikel/menuartikel.dart';
 import 'package:jalinan_kasih/pages/chat.dart';
 import 'package:jalinan_kasih/pages/login.dart';
 import 'package:jalinan_kasih/pages/menu1/menu1.dart';

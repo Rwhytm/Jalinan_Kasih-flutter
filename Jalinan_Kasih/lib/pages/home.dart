@@ -272,6 +272,29 @@ class _HomePageState extends State<HomePage> {
                   image: 'assets/images/deskripsi21.png',
                   title: 'Artikel 1\n',
                 ),
+                CustomSublistButton(
+                  onPressed: () {},
+                  image: 'assets/images/deskripsi21.png',
+                  title: 'Artikel 1\n',
+                ),
+                CustomSublistButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) {
+                        return Artikel3();
+                      }),
+                    );
+                  },
+                  image: 'assets/images/artikel3.jpg',
+                  title:
+                      '5 Alasan Pernikahan Dini Tidak Dianjurkan\n Bisa Menimbulkan Beragam Masalah',
+                ),
+                CustomSublistButton(
+                  onPressed: () {},
+                  image: 'assets/images/deskripsi21.png',
+                  title: 'Artikel 1\n',
+                ),
               ],
             ),
           ),
