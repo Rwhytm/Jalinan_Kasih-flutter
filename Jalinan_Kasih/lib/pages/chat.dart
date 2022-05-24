@@ -788,13 +788,6 @@ class _ChatPageState extends State<ChatPage> {
           );
         },
       ),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: () {
-      //     _showMyDialog();
-      //   },
-      //   child: Icon(Icons.question_mark_sharp),
-      //   backgroundColor: Colors.red,
-      // ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
     );
   }
