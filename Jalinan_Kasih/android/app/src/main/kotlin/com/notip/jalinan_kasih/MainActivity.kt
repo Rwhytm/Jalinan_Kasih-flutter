@@ -1,4 +1,4 @@
-package com.notip.jalinan_kasih
+package com.notip2.jalinan_kasih
 
 import io.flutter.embedding.android.FlutterActivity
 

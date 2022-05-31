@@ -1,41 +1,33 @@
 {
   "project_info": {
-    "project_number": "70849964324",
-    "project_id": "jalinan-kasih",
-    "storage_bucket": "jalinan-kasih.appspot.com"
+    "project_number": "171452164740",
+    "project_id": "jalinankasih-69ab4",
+    "storage_bucket": "jalinankasih-69ab4.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:70849964324:android:8d0e58ac4d6d274e0fabb1",
+        "mobilesdk_app_id": "1:171452164740:android:5e5ec65ff07c288be2b0d1",
         "android_client_info": {
-          "package_name": "com.notip.jalinan_kasih"
+          "package_name": "com.notip2.jalinan_kasih"
         }
       },
       "oauth_client": [
         {
-          "client_id": "70849964324-9reb2afh4m2lsm5cte0tjg0kq745707u.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.notip.jalinan_kasih",
-            "certificate_hash": "4e18fe9a1c16f71ae9ffdce0a09c9a1e63965818"
-          }
-        },
-        {
-          "client_id": "70849964324-nr1ks9qq0ibksi8oiq7jas4g491r46l9.apps.googleusercontent.com",
+          "client_id": "171452164740-a9uml9aluel85gb3rjijv3tqd80pl0e4.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBUTytIPXqrZK7ZpA9nkq2TSWGXW56s3wc"
+          "current_key": "AIzaSyDvSLhMsMLDH1udPtvEqX2HOmrzV600UJI"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "70849964324-nr1ks9qq0ibksi8oiq7jas4g491r46l9.apps.googleusercontent.com",
+              "client_id": "171452164740-a9uml9aluel85gb3rjijv3tqd80pl0e4.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
