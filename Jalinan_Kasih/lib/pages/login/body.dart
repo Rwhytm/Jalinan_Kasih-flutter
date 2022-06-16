@@ -37,7 +37,7 @@ class Body extends StatelessWidget {
             ),
             SizedBox(height: size.height * 0.03),
             RoundedInputField(
-              hintText: "admin@admin.com",
+              hintText: "email",
               onChanged: (value) {},
               controller: emailController,
             ),
