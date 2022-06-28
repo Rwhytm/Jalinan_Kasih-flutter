@@ -54,7 +54,7 @@ android {
         applicationId "com.notip2.jalinan_kasih"
         minSdkVersion 21
         targetSdkVersion 31
-        versionCode 7
+        versionCode 8
         versionName "2.0.5"
     }
         
