@@ -2,6 +2,22 @@
 jalinan kasih adalah sebuah aplikasi yang berguna untuk memberikan informasi terhadap pengguna dalam menghadapi perubahan pada saat remaja
 
 
+<br>
+Teknologi yang digunakan
+<br>
+<br>
+<a href="https://dart.dev/">
+    <img src="https://skillicons.dev/icons?i=dart" width=50"/>
+  </a>
+  
+  <a href="https://dart.dev/">
+    <img src="https://skillicons.dev/icons?i=firebase" width=50"/>
+  </a>
+  
+<br>
+<br>
+<br>
+<br>
 
 
 Berikut UI dari aplikasi ini : 
