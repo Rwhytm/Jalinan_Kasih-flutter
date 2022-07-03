@@ -11,6 +11,10 @@ Teknologi yang digunakan
   </a>
   
   <a href="https://dart.dev/">
+    <img src="https://skillicons.dev/icons?i=flutter" width=50"/>
+  </a>
+  
+  <a href="https://dart.dev/">
     <img src="https://skillicons.dev/icons?i=firebase" width=50"/>
   </a>
   
