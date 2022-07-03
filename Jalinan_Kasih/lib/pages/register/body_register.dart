@@ -65,6 +65,14 @@ class _BodyRegisterState extends State<BodyRegister> {
                   usernameController.text,
                   emailController.text,
                   passwordController.text,
+                ).then(
+                  (value) => ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(value != null
+                          ? "Register Berhasil"
+                          : "Register gagal, Coba Lagi"),
+                    ),
+                  ),
                 );
                 await Navigator.push(
                   context,
@@ -74,23 +82,6 @@ class _BodyRegisterState extends State<BodyRegister> {
                     },
                   ),
                 );
-                // await showDialog(
-                //   context: context,
-                //   builder: (context) => AlertDialog(
-                //     actions: [
-                //       TextButton(
-                //         onPressed: () {
-                //           Navigator.of(context).pop();
-                //         },
-                //         child: const Text('OK'),
-                //       ),
-                //     ],
-                //     content: Text(
-                //       e.toString(),
-                //     ),
-                //     title: const Text('Error'),
-                //   ),
-                // );
               },
             ),
             TextButton(

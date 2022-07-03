@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:171452164740:android:5e5ec65ff07c288be2b0d1",
+        "mobilesdk_app_id": "1:171452164740:android:a6dd1ad859294475e2b0d1",
         "android_client_info": {
-          "package_name": "com.notip2.jalinan_kasih"
+          "package_name": "com.techid.jalinan_kasih"
         }
       },
       "oauth_client": [

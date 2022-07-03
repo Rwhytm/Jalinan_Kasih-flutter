@@ -51,7 +51,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.notip2.jalinan_kasih"
+        applicationId "com.techid.jalinan_kasih"
         minSdkVersion 21
         targetSdkVersion 31
         versionCode 8

@@ -49,7 +49,15 @@ class Body extends StatelessWidget {
               text: "LOGIN ADMIN",
               press: () async {
                 await AuthServices.signIn(
-                    emailController.text, passwordController.text);
+                        emailController.text, passwordController.text)
+                    .then(
+                  (value) => ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(
+                          value != null ? "Login Berhasil" : "Data Anda Salah"),
+                    ),
+                  ),
+                );
 
                 await Navigator.push(
                   context,

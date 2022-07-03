@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.notip2.jalinan_kasih">
+    package="com.techid.jalinan_kasih">
     <uses-permission android:name="android.permission.INTERNET" />
    <application
         android:label="Jalinan Kasih"
